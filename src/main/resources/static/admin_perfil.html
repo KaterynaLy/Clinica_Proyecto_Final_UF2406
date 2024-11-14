@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Administrador - Gestión de Pacientes</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <h1>Panel del Administrador - Gestión de Pacientes</h1>
+
+    <div class="contenedor">
+        <!-- Columna 1: Consulta de Pacientes por ID y Documento -->
+        <section class="consulta-rapida">
+            <h2>Consulta de Pacientes</h2>
+            <label for="pacienteId">ID del Paciente:</label>
+            <input type="number" id="pacienteId" placeholder="Ingrese el ID del paciente">
+            <button onclick="obtenerPerfilCompleto()">Obtener Perfil por ID</button>
+
+            <label for="pacienteDocumento">Documento de Identidad:</label>
+            <input type="text" id="pacienteDocumento" placeholder="Ingrese el documento de identidad">
+            <button onclick="obtenerPerfilCompletoPorDocumento()">Obtener Perfil por Documento</button>
+
+            <!-- Contenedor para mostrar el perfil del paciente -->
+            <div id="perfil"></div>
+        </section>
+
+        <!-- Columna 2: Búsqueda por Nombre y Lista de Pacientes -->
+        <section class="consultas-adicionales">
+            <h2>Gestión de Pacientes</h2>
+            <div>
+                <h3>Buscar por Nombre</h3>
+                <input type="text" id="nombreBuscar" placeholder="Nombre del paciente">
+                <button onclick="buscarPorNombre()">Buscar</button>
+            </div>
+
+            <!-- Lista de pacientes -->
+            <h3>Lista de Pacientes</h3>
+            <ul id="listaPaciente"></ul>
+
+            <!-- Listar Citas (Admin y Paciente) -->
+            <div class="listar-citas">
+                <h3>Mis Citas</h3>
+                <button onclick="listarCitas()">Ver Citas</button>
+                <ul id="listaCitas"></ul>
+            </div>
+        </section>
+
+        <!-- Columna 3: Formulario para Agregar Paciente -->
+        <section class="gestionar-pacientes">
+            <h2>Agregar Paciente</h2>
+            <form onsubmit="agregarPaciente(); return false;">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono">
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion">
+
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento">
+
+                <label for="genero">Género:</label>
+                <input type="text" id="genero">
+
+                <label for="origenCliente">Origen del Cliente:</label>
+                <input type="text" id="origenCliente">
+
+                <label for="fechaCreacion">Fecha de Creación:</label>
+                <input type="date" id="fechaCreacion">
+
+                <label for="documentoIdentidad">Documento de Identidad:</label>
+                <input type="text" id="documentoIdentidad">
+
+                <button type="submit">Agregar Paciente</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Gestión de Citas (Administrador) -->
+    <section class="gestion-citas">
+        <h2>Gestión de Citas</h2>
+        <button onclick="listarCitasPendientes()">Ver Citas Pendientes</button>
+        <ul id="listaCitasPendientes"></ul>
+    </section>
+
+    <script src="admin.js"></script>
+</body>
+</html>

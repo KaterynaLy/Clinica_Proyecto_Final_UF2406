@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="paciente.css">
+    <title>Perfil del Paciente</title>
+</head>
+<body>
+    <h1>Panel del Paciente - Gestión de Pacientes</h1>
+
+    <div class="contenedor">
+        <!-- Menú de citas a la izquierda -->
+        <div class="menu-citas">
+            <label for="pacienteDocumento">Documento de Identidad:</label>
+            <input type="text" id="pacienteDocumento" placeholder="Ingrese el documento de identidad">
+            <button onclick="obtenerPerfilCompletoPorDocumento()">Buscar Paciente</button>
+
+            <!-- Formulario para asignar cita -->
+            <div id="asignarCita" style="display: none; margin-top: 20px;">
+                <h3>Asignar Cita</h3>
+                <label for="fechaCita">Fecha:</label>
+                <input type="date" id="fechaCita">
+                <label for="horaCita">Hora:</label>
+                <input type="time" id="horaCita">
+                <button onclick="solicitarCita()">Solicitar Cita</button>
+            </div>
+
+            <!-- Lista de citas asignadas al paciente -->
+            <ul id="listaCitas" style="margin-top: 20px;"></ul>
+        </div>
+
+        <!-- Información del paciente a la derecha -->
+        <div id="perfil" class="info-paciente"></div>
+    </div>
+
+    <script src="paciente.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+        <title>Inicio de Sesión - Clínica Dental</title>  
+    </head>
+    <body>
+        <div class="landing">
+            <h1>Clínica Dental</h1>
+            <div class="login-container">
+                <h2>Iniciar Sesión</h2>
+                <form onsubmit="login();
+                        return false;">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                    <label for="loginPassword">Contraseña:</label>
+                    <input type="password" id="loginPassword" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
